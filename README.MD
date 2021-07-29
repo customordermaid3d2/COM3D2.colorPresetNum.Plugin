@@ -2,9 +2,8 @@
 https://youtu.be/VXxlDrl8PFg
 
 ![2021-07-29 22 47 11](https://user-images.githubusercontent.com/20321215/127504072-5f109aad-f34f-40b3-9d9d-0fdef970dd23.png)
-![2021-07-29 21 58 10](https://user-images.githubusercontent.com/20321215/127507579-2a0d9eac-5cb4-428e-9679-fbd5c22e5996.png)
-![2021-07-29 22 47 11](https://user-images.githubusercontent.com/20321215/127507584-7baad089-ca30-4052-9465-cfcad62b3b65.png)
-
+![2021-07-29 22 59 23](https://user-images.githubusercontent.com/20321215/127507723-8adc7db5-cc42-4939-b960-e6434195e4f8.png)
+![2021-07-29 23 11 20](https://user-images.githubusercontent.com/20321215/127507725-e4921983-24c4-4fa4-b8fe-10fe178673fb.png)
 
 # input
 
