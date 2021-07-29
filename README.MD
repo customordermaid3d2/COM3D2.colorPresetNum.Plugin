@@ -17,3 +17,8 @@ COM3D2\BepInEx\plugins
 
 - COM3D2.API.dll  https://github.com/DeathWeasel1337/COM3D2_Plugins/releases/download/v3/COM3D2.API.v1.0.zip
 - LillyUtill 21.7.22 over https://github.com/customordermaid3d2/COM3D2.LillyUtill/releases  
+
+
+# config
+
+BepInEx\config\COM3D2.colorPresetNum.Plugin.cfg
