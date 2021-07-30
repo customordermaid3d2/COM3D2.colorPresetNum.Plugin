@@ -57,7 +57,7 @@ namespace COM3D2.colorPresetNum.Plugin
             )
         {
 
-            ColorPresetNum.myLog.LogMessage("ColorPresetItem.Awake1", ___slotNo_, ___greyTex.width, ___greyTex.height, ___emptyTex.width, ___emptyTex.height);
+            //ColorPresetNum.myLog.LogMessage("ColorPresetItem.Awake1", ___slotNo_, ___greyTex.width, ___greyTex.height, ___emptyTex.width, ___emptyTex.height);
 
             //if (!isAplly )
             {
@@ -79,7 +79,7 @@ namespace COM3D2.colorPresetNum.Plugin
                 //isAplly = true;
             }
 
-            ColorPresetNum.myLog.LogMessage("ColorPresetItem.Awake2", ___slotNo_, (int)cellWidth.Value, (int)cellHeight.Value, ___greyTex.width, ___greyTex.height, ___emptyTex.width, ___emptyTex.height);
+            //ColorPresetNum.myLog.LogMessage("ColorPresetItem.Awake2", ___slotNo_, (int)cellWidth.Value, (int)cellHeight.Value, ___greyTex.width, ___greyTex.height, ___emptyTex.width, ___emptyTex.height);
             //grayTexArray = UTY.GetPixelArray(___greyTex);
             //___colorChangeTex = new Texture2D((int)cellWidth.Value, (int)cellWidth.Value, TextureFormat.RGBA32, false, true);
             //___greyTex.width = (int)cellWidth.Value; // 미구현되서 사용 불가
@@ -90,7 +90,7 @@ namespace COM3D2.colorPresetNum.Plugin
         [HarmonyPrefix]// CharacterMgr의 SetActive가 실행 후에 아래 메소드 작동
         public static void OnButtonClick(int ___slotNo_)
         {
-            ColorPresetNum.myLog.LogMessage("ColorPresetItem.OnButtonClick", UICamera.currentTouchID, ___slotNo_);
+            //ColorPresetNum.myLog.LogMessage("ColorPresetItem.OnButtonClick", UICamera.currentTouchID, ___slotNo_);
         }
 
         [HarmonyPatch(typeof(ColorPaletteManager), "Awake")]
@@ -103,11 +103,11 @@ namespace COM3D2.colorPresetNum.Plugin
                 cellHeight = config.Bind("ColorPaletteManager", "cellHeight", ___colorPresetGrid.cellHeight / 2);
                 maxPerLine = config.Bind("ColorPaletteManager", "maxPerLine", ___colorPresetGrid.maxPerLine * 2);
 
-                ColorPresetNum.myLog.LogMessage("ColorPaletteManager.Awake"
-                    , ___colorPresetGrid.cellWidth, cellWidth.Value
-                    , ___colorPresetGrid.cellHeight, cellHeight.Value
-                    , ___colorPresetGrid.maxPerLine, maxPerLine.Value
-                    );
+               // ColorPresetNum.myLog.LogMessage("ColorPaletteManager.Awake"
+               //     , ___colorPresetGrid.cellWidth, cellWidth.Value
+               //     , ___colorPresetGrid.cellHeight, cellHeight.Value
+               //     , ___colorPresetGrid.maxPerLine, maxPerLine.Value
+               //     );
 
                 ___colorPresetGrid.cellWidth = cellWidth.Value;
                 ___colorPresetGrid.cellHeight = cellHeight.Value;
@@ -115,12 +115,12 @@ namespace COM3D2.colorPresetNum.Plugin
             }
             else
             {
-                ColorPresetNum.myLog.LogFatal("ColorPaletteManager.Awake", "___colorPresetGrid null");
+                ColorPresetNum.myLog.LogFatal("ColorPaletteManager.Awake : ___colorPresetGrid null");
             }
 
             colorPresetNum = config.Bind("ColorPaletteManager", "colorPresetNum", ___colorPresetNum * 4);
 
-            ColorPresetNum.myLog.LogMessage("ColorPaletteManager.Awake", ___colorPresetNum, colorPresetNum.Value);
+           // ColorPresetNum.myLog.LogMessage("ColorPaletteManager.Awake", ___colorPresetNum, colorPresetNum.Value);
             ___colorPresetNum = colorPresetNum.Value;
 
         }

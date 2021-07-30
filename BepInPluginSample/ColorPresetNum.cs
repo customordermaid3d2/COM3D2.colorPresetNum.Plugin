@@ -1,9 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
-using COM3D2.LillyUtill;
-using COM3D2API;
+using BepInEx.Logging;
 using HarmonyLib;
-using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +16,7 @@ namespace COM3D2.colorPresetNum.Plugin
     class MyAttribute
     {
         public const string PLAGIN_NAME = "colorPresetNum";
-        public const string PLAGIN_VERSION = "21.7.29";
+        public const string PLAGIN_VERSION = "21.7.30";
         public const string PLAGIN_FULL_NAME = "COM3D2.colorPresetNum.Plugin";
     }
 
@@ -34,7 +32,10 @@ namespace COM3D2.colorPresetNum.Plugin
 
         //public static Sample sample;
 
-        public static MyLog myLog = new MyLog(MyAttribute.PLAGIN_NAME);
+        //public static MyLog myLog = new MyLog(MyAttribute.PLAGIN_NAME);
+
+        public static ManualLogSource myLog;
+
         /*
         public Sample()
         {
@@ -46,7 +47,8 @@ namespace COM3D2.colorPresetNum.Plugin
         /// </summary>
         public void Awake()
         {
-            ColorPresetNum.myLog.LogMessage("Awake",MyUtill.Get_BuildDateTime(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version));
+            myLog = Logger;
+            Logger.LogMessage("Awake "+Get_BuildDateTime(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version));
             ColorPresetNumPatch.init(Config);
             harmony = Harmony.CreateAndPatchAll(typeof(ColorPresetNumPatch));
             // 단축키 기본값 설정
@@ -57,6 +59,22 @@ namespace COM3D2.colorPresetNum.Plugin
             // 기어 메뉴 추가. 이 플러그인 기능 자체를 멈추려면 enabled 를 꺽어야함. 그러면 OnEnable(), OnDisable() 이 작동함
         }
 
+        public static System.DateTime Get_BuildDateTime(System.Version version = null)
+        {
+            // 주.부.빌드.수정
+            // 주 버전    Major Number
+            // 부 버전    Minor Number
+            // 빌드 번호  Build Number
+            // 수정 버전  Revision NUmber
+
+            //매개 변수가 존재할 경우
+            if (version == null)
+                version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+            System.DateTime dtBuild = new DateTime(2000, 1, 1).AddDays(version.Build).AddSeconds(version.Revision * 2);
+
+            return dtBuild;
+        }
         /*
 
         public void OnEnable()
@@ -122,7 +140,7 @@ namespace COM3D2.colorPresetNum.Plugin
 
         }
         */
-        
+
         /*
         public void OnGUI()
         {
