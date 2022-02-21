@@ -16,13 +16,13 @@ namespace COM3D2.colorPresetNum.Plugin
     class MyAttribute
     {
         public const string PLAGIN_NAME = "colorPresetNum";
-        public const string PLAGIN_VERSION = "21.7.30";
+        public const string PLAGIN_VERSION = "22.2.22";
         public const string PLAGIN_FULL_NAME = "COM3D2.colorPresetNum.Plugin";
     }
 
     [BepInPlugin(MyAttribute.PLAGIN_FULL_NAME, MyAttribute.PLAGIN_NAME, MyAttribute.PLAGIN_VERSION)]// 버전 규칙 잇음. 반드시 2~4개의 숫자구성으로 해야함. 미준수시 못읽어들임
     //[BepInPlugin("COM3D2.Sample.Plugin", "COM3D2.Sample.Plugin", "21.6.6")]// 버전 규칙 잇음. 반드시 2~4개의 숫자구성으로 해야함. 미준수시 못읽어들임
-    [BepInProcess("COM3D2x64.exe")]
+    //[BepInProcess("COM3D2x64.exe")]
     public class ColorPresetNum : BaseUnityPlugin
     {
         // 단축키 설정파일로 연동
